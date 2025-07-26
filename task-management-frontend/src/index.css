@@ -1,0 +1,108 @@
+/* Tailwind CSS base styles */
+@tailwind base;
+
+/* Tailwind CSS components */
+@tailwind components;
+
+/* Tailwind CSS utilities */
+@tailwind utilities;
+
+/* Custom base styles for a professional look */
+@layer base {
+    /* Global reset for consistent rendering */
+    *,
+    *:before,
+    *:after {
+        @apply box-border;
+    }
+
+    /* HTML and body setup */
+    html {
+        @apply scroll-smooth;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+        /* Typography and background */
+        @apply font-sans bg-neutral-50 text-neutral-800;
+        @apply text-base leading-normal;
+
+        /* Ensure minimum height and smooth font rendering */
+        @apply min-h-screen;
+        font-feature-settings: 'kern';
+    }
+
+    /* Headings for hierarchy and consistency */
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-semibold text-neutral-900;
+    }
+
+    h1 {
+        @apply text-3xl md:text-4xl leading-tight mb-4;
+    }
+
+    h2 {
+        @apply text-2xl md:text-3xl leading-snug mb-3;
+    }
+
+    h3 {
+        @apply text-xl md:text-2xl leading-snug mb-2;
+    }
+
+    /* Links for accessibility and visual feedback */
+    a {
+        @apply text-blue-600 hover:text-blue-800 transition-colors duration-200;
+        @apply underline underline-offset-2;
+    }
+
+    /* Paragraphs and text content */
+    p {
+        @apply mb-4 text-neutral-700;
+    }
+
+    /* Form elements for consistency */
+    button, input, select, textarea {
+        @apply font-sans text-neutral-800;
+        @apply transition-colors duration-200;
+    }
+
+    /* Focus states for accessibility */
+    :focus {
+        @apply outline-none ring-2 ring-blue-500 ring-opacity-50;
+    }
+
+    /* Ensure images are responsive */
+    img {
+        @apply max-w-full h-auto;
+    }
+}
+
+/* Component layer for reusable styles */
+@layer components {
+    /* Professional button style */
+    .btn-primary {
+        @apply inline-flex items-center px-4 py-2 bg-blue-600 text-white font-semibold rounded-md;
+        @apply hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50;
+        @apply transition-all duration-200;
+    }
+
+    /* Card component for content blocks */
+    .card {
+        @apply bg-white p-6 rounded-lg shadow-md;
+        @apply border border-neutral-200;
+    }
+}
+
+/* Utility layer for specific tweaks */
+@layer utilities {
+    /* Custom utility for professional spacing */
+    .container {
+        @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+    }
+
+    /* Smooth scroll behavior for anchor links */
+    .smooth-scroll {
+        @apply scroll-smooth;
+    }
+}
